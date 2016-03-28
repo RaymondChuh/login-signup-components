@@ -1,4 +1,6 @@
-module.exports = function(grunt) {
+module.exports = grunt => {
+	// load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns
+	require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -20,10 +22,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-eslint');
-
-  grunt.registerTask('default', ['eslint', 'browserify']);
-
+	grunt.registerTask('default', ['eslint', 'browserify']);
 };
