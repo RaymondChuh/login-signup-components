@@ -19,8 +19,24 @@ module.exports = grunt => {
     },
     eslint:{
       target:['src/*.js']
-    }
+    },
+		connect: {
+			server: {
+				options: {
+						port: 9000,
+						livereload: true
+				}
+			}
+		},
+		watch: {
+			files: ['src/*.js'],
+			tasks: ['compile'],
+			options: {
+				livereload: true
+			}
+		}
   });
+	grunt.registerTask('compile', ['eslint', 'browserify']);
+	grunt.registerTask('default', ['compile', 'connect', 'watch']);
 
-	grunt.registerTask('default', ['eslint', 'browserify']);
 };

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    {{ if development }}
+      <!-- regenerated files -->
+      <link href="http://localhost:9000/client.css" rel="stylesheet" type="text/css" />
+      <script src="http://localhost:9000/client.js"></script>
+    {{ else if (production) }}
+      <!-- static files -->
+      <link href="client.css" rel="stylesheet" type="text/css" />
+      <script src="client.js"></script>
+    {{ endif }}
+  </head>
+  <body>
+    <div id="example"></div>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
