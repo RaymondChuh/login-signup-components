@@ -10,15 +10,15 @@ module.exports = grunt => {
     },
     browserify:{
       dist:{
-        src:'src/*.js',
-        dest:'dist/bundle.js',
+        src:'src/**/*.js',
+        dest:'dist/<%= pkg.name %>.js',
         options: {
           transform:[['babelify', {presets:{_:['es2015','react']}}]]
         }
       }
     },
     eslint:{
-      target:['src/*.js']
+      target:['src/**/*.js']
     },
 		connect: {
 			server: {
@@ -34,9 +34,10 @@ module.exports = grunt => {
 			options: {
 				livereload: true
 			}
-		}
+		},
+		clean: ['dist/*']
   });
-	grunt.registerTask('compile', ['eslint', 'browserify']);
+	grunt.registerTask('compile', ['clean','eslint', 'browserify']);
 	grunt.registerTask('default', ['compile', 'connect', 'watch']);
 
 };
