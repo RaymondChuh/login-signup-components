@@ -10,26 +10,27 @@ module.exports = grunt => {
     },
     browserify:{
       dist:{
-        src:'src/**/*.js',
-        dest:'dist/<%= pkg.name %>.js',
+        src: ['src/**/*.jsx'],
+        dest: 'dist/<%= pkg.name %>.js',
         options: {
           transform:[['babelify', {presets:{_:['es2015','react']}}]]
         }
       }
     },
     eslint:{
-      target:['src/**/*.js']
+      target:['src/**/*.jsx', 'src/**/*.js']
     },
 		connect: {
 			server: {
 				options: {
 						port: 9000,
-						livereload: true
+						livereload: true,
+						interrupt: true
 				}
 			}
 		},
 		watch: {
-			files: ['src/*.js'],
+			files: ['src/*.jsx','src/**/*.jsx','src/**/*.js', 'index.html'],
 			tasks: ['compile'],
 			options: {
 				livereload: true
