@@ -31,12 +31,17 @@
   "devDependencies": {
     "babel-eslint": "^6.0.0-beta.6",
     "eslint": "^2.5.1",
+    "globby": "^4.0.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^18.0.0",
-    "load-grunt-tasks": "^3.4.1"
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "load-grunt-tasks": "^3.4.1",
+    "through2": "^2.0.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
