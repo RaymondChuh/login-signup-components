@@ -18830,6 +18830,8 @@ var _HelloWorld = require('./components/HelloWorld.jsx');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var abc = '';
+
 // Play around with new array methods in ES6
 
 // Array.from

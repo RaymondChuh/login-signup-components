@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {HelloWorld} from './components/HelloWorld.jsx';
 
-
+var abc='';
 
 // Play around with new array methods in ES6
 
